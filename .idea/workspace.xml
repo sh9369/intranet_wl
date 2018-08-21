@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb74d8a1-e5d8-4044-b09d-54b6f4d7cca7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/project/common_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/common_tools.py" afterDir="false" />
-    </list>
+    <list default="true" id="cb74d8a1-e5d8-4044-b09d-54b6f4d7cca7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/config_tools.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -94,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/common_tools.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
@@ -142,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -264,16 +262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/config_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#181#200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/common_tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -281,6 +269,16 @@
           <folding>
             <marker date="1534854321482" expanded="true" signature="755:760" ph="..." />
             <marker date="1534854321482" expanded="true" signature="1840:1845" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/config_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#181#200#0" expanded="true" />
           </folding>
         </state>
       </provider>
