@@ -76,9 +76,11 @@ class ESclient(object):
 			)
 
 #get white list
-def get_wl():
+def get_wl(logs):
+    logs.info("start read white list.")
     datapath=config_tools.get_data_path()+'whitelist.txt'
     wl_data=common_tools.readdata(datapath)
+    logs.info("white list size:{0}".format(len(wl_data)))
     return wl_data
 
 # change subnet to range type
@@ -89,7 +91,8 @@ def subnet_to_range(subnet):
         subnet_range.append(tmp_range)
 
 # check_func()
-def check_func(esdata,wldata):
+def check_func(esdata,wldata,mylogs):
+    mylogs.info("start check!")
     # separate white list data
     full_data,range_data,subnet_data=common_tools.separate_ip(wldata)
     # start match
@@ -99,12 +102,16 @@ def check_func(esdata,wldata):
         remain_data=list(set(esdata)-set(full_data))
     if (subnet_data):  # subnet: 1->lpm; 2-> subnet大于24用range
         # serapate the subnet(8/16-24/->lpm, others -> range)
+        mylogs.info("check lpm...")
         remain_sub, remain_data = common_tools.lpm_match(subnet_data, remain_data)
         remain_range = subnet_to_range(remain_sub)
+        mylogs.info("lpm finish!")
     #merge
     range_data=dict(range_data,**remain_range)
     if(range_data):
+        mylogs.info("check range data...")
         remain_data=common_tools.range_data_match(range_data,remain_data)
+        mylogs.info("range_data finish!")
     return remain_data
 
 
@@ -130,11 +137,11 @@ def start(sTime,deltatime, indx, aggs_name, iserver, iport, tday):
         es=ESclient(server=iserver,port=iport)
         es_data=es.get_es_ip(indx,gte,lte,aggs_name,time_zone)
         # get white list
-        wlist=get_wl()
+        wlist=get_wl(mylog)
         # check
         all_ip=[]
         if(wlist and es_data):# get data
-            all_ip = check_func(es_data,wlist)
+            all_ip = check_func(es_data,wlist,mylog)
         elif(wlist==False):
             mylog.error(" NO white list!")
         # print("check finish."), time.ctime()
