@@ -1,1 +1,0 @@
-# Intranet white list
