@@ -1,9 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf8 -*-
 # @Time    : 2018/8/20 19:48
-# @Author  : songh
-# @Site    : 
-# @File    : whitelist_check.py
+# @Author  : songh# @File    : whitelist_check.py
 # @Software: PyCharm
 from elasticsearch import Elasticsearch
 import datetime,time

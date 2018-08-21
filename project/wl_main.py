@@ -2,7 +2,6 @@
 # -*- coding:utf8 -*-
 # @Time    : 2018/8/20 18:38
 # @Author  : songh
-# @Site    : 
 # @File    : wl_main.py
 # @Software: PyCharm
 import datetime,time

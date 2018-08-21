@@ -2,7 +2,6 @@
 # -*- coding:utf8 -*-
 # @Time    : 2018/8/20 18:39
 # @Author  : songh
-# @Site    : 
 # @File    : config_tools.py
 # @Software: PyCharm
 
