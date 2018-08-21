@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cb74d8a1-e5d8-4044-b09d-54b6f4d7cca7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/project/common_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/common_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/config_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/whitelist_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/whitelist_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/wl_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/wl_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/config_tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="165">
+              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding>
                 <element signature="e#181#200#0" expanded="true" />
               </folding>
@@ -100,12 +97,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/common_tools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="231">
+              <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
               <folding>
-                <element signature="e#152#186#0" expanded="true" />
-                <marker date="1534854070630" expanded="true" signature="775:780" ph="..." />
-                <marker date="1534854070630" expanded="true" signature="1860:1865" ph="..." />
+                <marker date="1534854321482" expanded="true" signature="755:760" ph="..." />
+                <marker date="1534854321482" expanded="true" signature="1840:1845" ph="..." />
               </folding>
             </state>
           </provider>
@@ -177,7 +173,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -261,16 +257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/config_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding>
-            <element signature="e#181#200#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/config.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -278,14 +264,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/config_tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="e#181#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/common_tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="231">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
           <folding>
-            <element signature="e#152#186#0" expanded="true" />
-            <marker date="1534854070630" expanded="true" signature="775:780" ph="..." />
-            <marker date="1534854070630" expanded="true" signature="1860:1865" ph="..." />
+            <marker date="1534854321482" expanded="true" signature="755:760" ph="..." />
+            <marker date="1534854321482" expanded="true" signature="1840:1845" ph="..." />
           </folding>
         </state>
       </provider>

@@ -6,7 +6,6 @@
 # @Software: PyCharm
 import logging,os,re,socket,struct
 from logging.handlers import TimedRotatingFileHandler
-import config_tools
 import lpm
 
 # log function
