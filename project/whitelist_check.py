@@ -144,6 +144,7 @@ def start(sTime,deltatime, indx, aggs_name, iserver, iport, tday):
         es=ESclient(server=iserver,port=iport)
         es_data=es.get_es_ip(indx,gte,lte,aggs_name,time_zone)
         mylog.info("es data size:{0}".format(len(es_data)))
+        mylog.info("es data :{0}".format(es_data))
         # get white list
         wlist=get_wl(mylog)
         # check
