@@ -129,6 +129,7 @@ def start(sTime,deltatime,today):
     # ES params
     ihost, iport, indx, iaggs = config_tools.get_ES_info()
     iquery=config_tools.get_query()
+    mylog.info("query:{0}".format(iquery))
     try:
         # print("Starting check command."), time.ctime()
         mylog.info("[Starting check command.Time is:{}]".format((sTime).strftime('%Y-%m-%d %H:%M:%S')))
