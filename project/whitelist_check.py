@@ -107,8 +107,10 @@ def check_func(esdata,wldata,mylogs):
         remain_sub, remain_data = common_tools.lpm_match(subnet_data, remain_data)
         remain_range = subnet_to_range(remain_sub)
         mylogs.info("lpm finish!")
-    #merge
-    range_data=dict(range_data,**remain_range)
+    else:
+        remain_range=[]
+    #merge list
+    range_data=list(set(range_data+remain_range))
     if(range_data):
         mylogs.info("check range data...")
         remain_data=common_tools.range_data_match(range_data,remain_data)
