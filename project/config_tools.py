@@ -59,3 +59,9 @@ def get_data_path():
         new_path=source_data_path.replace('/','\\')
         return new_path
     return source_data_path
+
+def get_file():
+    #source_data_path
+    file_key = cp.options('data_path')
+    file_name=cp.get('data_path', file_key[1])
+    return file_name

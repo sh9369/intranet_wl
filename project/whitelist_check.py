@@ -43,7 +43,7 @@ class ESclient(object):
                 "excludes": []
             },
             "aggs": {
-                "getDip": {
+                "getSip": {
                     "terms": {
                         "field": aggs_name,
                         "size": size,
@@ -59,7 +59,7 @@ class ESclient(object):
 			index=index,
 			body=search_option
 			)
-		clean_search_result = search_result['aggregations']["getDip"]['buckets']
+		clean_search_result = search_result['aggregations']["getSip"]['buckets']
 		ip = []
 		for temp in clean_search_result:
 			ip.append(temp['key'])
@@ -78,7 +78,8 @@ class ESclient(object):
 #get white list
 def get_wl(logs):
     logs.info("start read white list.")
-    datapath=config_tools.get_data_path()+'whitelist.txt'
+    filename=config_tools.get_file()
+    datapath=config_tools.get_data_path()+ filename
     wl_data=common_tools.readdata(datapath)
     logs.info("white list size:{0}".format(len(wl_data)))
     return wl_data
