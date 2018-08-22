@@ -62,7 +62,7 @@ def range_data_match(rangedata,esdata):
     mylogs.info("range: change ip to long.")
     for irange in rangedata:
         tmplist=[]
-        tmp=rangedata.split('-')
+        tmp=irange.split('-')
         startip=socket.ntohl(struct.unpack("I",socket.inet_aton(tmp[0]))[0])
         endip=socket.ntohl(struct.unpack("I",socket.inet_aton(tmp[1]))[0])
         tmplist.append(startip)
