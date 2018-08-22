@@ -111,6 +111,7 @@ def check_func(esdata,wldata,mylogs):
         remain_range=[]
     #merge list
     range_data=list(set(range_data+remain_range))
+    mylogs.info("range date size :{0}".format(len(range_data)))
     if(range_data):
         mylogs.info("check range data...")
         remain_data=common_tools.range_data_match(range_data,remain_data)
