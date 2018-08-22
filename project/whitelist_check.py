@@ -77,11 +77,11 @@ class ESclient(object):
 
 #get white list
 def get_wl(logs):
-    logs.info("start read white list.")
+    logs.info("[Whitelist] start read white list.")
     filename=config_tools.get_file()
     datapath=config_tools.get_data_path()+ filename
     wl_data=common_tools.readdata(datapath)
-    logs.info("white list size:{0}".format(len(wl_data)))
+    logs.info("[Whitelist] white list size:{0}".format(len(wl_data)))
     return wl_data
 
 # change subnet to range type
@@ -104,21 +104,21 @@ def check_func(esdata,wldata,mylogs):
         remain_data=list(set(esdata)-set(full_data))
     if (subnet_data):  # subnet: 1->lpm; 2-> subnet大于24用range
         # serapate the subnet(8/16-24/->lpm, others -> range)
-        mylogs.info("check lpm...")
+        mylogs.info("start lpm match...")
         remain_sub, remain_data = common_tools.lpm_match(subnet_data, remain_data)
         remain_range = subnet_to_range(remain_sub)
-        mylogs.info("lpm finish!")
+        mylogs.info("[LPM] finish!")
     else:
         remain_range=[]
     #merge list
     # print type(range_data)
     # print type(remain_range)
     range_data=list(set(range_data+remain_range))
-    mylogs.info("range date size :{0}".format(len(range_data)))
+    mylogs.info("[Range] range date size : {0}".format(len(range_data)))
     if(range_data):
-        mylogs.info("check range data...")
+        mylogs.info("start range match...")
         remain_data=common_tools.range_data_match(range_data,remain_data)
-        mylogs.info("range_data finish!")
+        mylogs.info("[Range] finish!")
     return remain_data
 
 
@@ -129,7 +129,7 @@ def start(sTime,deltatime,today):
     # ES params
     ihost, iport, indx, iaggs = config_tools.get_ES_info()
     iquery=config_tools.get_query()
-    mylog.info("query:{0}".format(iquery))
+    # mylog.info("query:{0}".format(iquery))
     try:
         # print("Starting check command."), time.ctime()
         mylog.info("[Starting check command.Time is:{}]".format((sTime).strftime('%Y-%m-%d %H:%M:%S')))
@@ -146,8 +146,8 @@ def start(sTime,deltatime,today):
         # get es data
         es=ESclient(server=ihost,port=iport)
         es_data=es.get_es_ip(indx,gte,lte,iaggs,time_zone,iquery)
-        mylog.info("es data size:{0}".format(len(es_data)))
-        mylog.info("es data :{0}".format(es_data))
+        mylog.info("[ES] es data size:{0}".format(len(es_data)))
+        # mylog.info("es data :{0}".format(es_data))
         # get white list
         wlist=get_wl(mylog)
         # check

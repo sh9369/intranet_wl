@@ -59,7 +59,7 @@ def range_data_match(rangedata,esdata):
     # firstly, change ip to int
     mylogs=getlog()
     iplong=[]
-    mylogs.info("range: change ip to long.")
+    mylogs.info("[Range] change ip to long.")
     for irange in rangedata:
         tmplist=[]
         tmp=irange.split('-')
@@ -69,12 +69,12 @@ def range_data_match(rangedata,esdata):
         tmplist.append(endip)
         iplong.append(tmplist)
     #secondly, sorted
-    mylogs.info("range: sorted the data.")
+    mylogs.info("[Range] sorted the data.")
     new_range=sorted(iplong,key=lambda x:x[0])# new_range:[[start1,end1],[start2,end2],...[]]
     # finally , binary search
     remain_data=[]
     rangeLen = len(new_range)
-    mylogs.info("range: binary search.")
+    mylogs.info("[Range] binary search.")
     for ips in esdata:
         ip_es_num = socket.ntohl(struct.unpack("I",socket.inet_aton(str(ips)))[0])
         # Binary Search
@@ -239,7 +239,7 @@ def lpm_match(subnet_data,remain_data):
         elif (netMask > 24):  # range match
             sn_gte24.append(sn)
 
-    mylog.info('gte24 size:%d' % len(sn_gte24))
+    mylog.info('[LPM] gte24 size:%d' % len(sn_gte24))
     # match
     new_remain=[]
     for ips in remain_data:
