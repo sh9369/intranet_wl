@@ -9,7 +9,7 @@ import common_tools
 import config_tools
 import whitelist_check
 
-def start(stime,dtime,host,port,indx,aggs):
+def start(stime,dtime):
     # new running procedure
     updatetime = datetime.datetime.now()
     startTime = stime
@@ -27,7 +27,7 @@ def start(stime,dtime,host,port,indx,aggs):
             time.sleep((startTime - datetime.datetime.now()).total_seconds())
         try:
             # check interval time is 5mins
-            all_IP = whitelist_check.start(startTime,dtime, indx, aggs, host, port, tday)
+            all_IP = whitelist_check.start(startTime,dtime,tday)
             startTime = startTime + dtime
             flgnum += 1
             # runtime=time.clock()-st# get the time of whole process

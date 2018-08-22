@@ -123,7 +123,7 @@ def check_func(esdata,wldata,mylogs):
 
 
 # start
-def start(sTime,deltatime):
+def start(sTime,deltatime,today):
     # new check function
     mylog = common_tools.getlog()
     # ES params
