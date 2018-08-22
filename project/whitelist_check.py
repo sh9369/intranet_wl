@@ -90,6 +90,7 @@ def subnet_to_range(subnet):
     for sn in subnet:
         tmp_range=common_tools.subnet_range(sn)
         subnet_range.append(tmp_range)
+    return subnet_range
 
 # check_func()
 def check_func(esdata,wldata,mylogs):
@@ -110,6 +111,8 @@ def check_func(esdata,wldata,mylogs):
     else:
         remain_range=[]
     #merge list
+    # print type(range_data)
+    # print type(remain_range)
     range_data=list(set(range_data+remain_range))
     mylogs.info("range date size :{0}".format(len(range_data)))
     if(range_data):
