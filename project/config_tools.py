@@ -61,7 +61,13 @@ def get_data_path():
     return source_data_path
 
 def get_file():
-    #source_data_path
+    #return file name
     file_key = cp.options('data_path')
     file_name=cp.get('data_path', file_key[1])
     return file_name
+
+def get_query():
+    # get es query
+    iquery=cp.options("ES_info")
+    str_query = cp.get('ES_info', iquery[4])
+    return str_query

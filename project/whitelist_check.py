@@ -13,7 +13,7 @@ class ESclient(object):
 	def __init__(self,server='192.168.0.122',port='9222'):
 		self.__es_client=Elasticsearch([{'host':server,'port':port}])
 
-	def get_es_ip(self,index,gte,lte,aggs_name,time_zone,size=500000):
+	def get_es_ip(self,index,gte,lte,aggs_name,time_zone,querystr,size=500000):
 		search_option={
             "size": 0,
             "query": {
@@ -21,7 +21,7 @@ class ESclient(object):
                 "must": [
                     {
                         "query_string": {
-                            "query": "unknown_conn:0",
+                            "query": querystr,
                             "analyze_wildcard": True
                         }
                     },
@@ -124,9 +124,12 @@ def check_func(esdata,wldata,mylogs):
 
 
 # start
-def start(sTime,deltatime, indx, aggs_name, iserver, iport, tday):
+def start(sTime,deltatime):
     # new check function
     mylog = common_tools.getlog()
+    # ES params
+    ihost, iport, indx, iaggs = config_tools.get_ES_info()
+    iquery=config_tools.get_query()
     try:
         # print("Starting check command."), time.ctime()
         mylog.info("[Starting check command.Time is:{}]".format((sTime).strftime('%Y-%m-%d %H:%M:%S')))
@@ -141,8 +144,8 @@ def start(sTime,deltatime, indx, aggs_name, iserver, iport, tday):
         # timestamp is used to insert function
         timestamp = (sTime).strftime('%Y-%m-%dT%H:%M:%S.%f') + time_zone
         # get es data
-        es=ESclient(server=iserver,port=iport)
-        es_data=es.get_es_ip(indx,gte,lte,aggs_name,time_zone)
+        es=ESclient(server=ihost,port=iport)
+        es_data=es.get_es_ip(indx,gte,lte,iaggs,time_zone,iquery)
         mylog.info("es data size:{0}".format(len(es_data)))
         mylog.info("es data :{0}".format(es_data))
         # get white list

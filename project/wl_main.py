@@ -42,6 +42,5 @@ if __name__ == '__main__':
         starttime = time.strftime("%Y-%m-%d %H:%M:%S")
     else:
         starttime = datetime.datetime.strptime(discard, '%Y-%m-%d %H:%M:%S')
-    # ES params
-    ihost, iport, indx, iaggs = config_tools.get_ES_info()
-    start(starttime,deltatime,ihost, iport, indx, iaggs)
+
+    start(starttime,deltatime)
