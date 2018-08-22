@@ -57,7 +57,9 @@ def separate_ip(iplist):
 # range data match
 def range_data_match(rangedata,esdata):
     # firstly, change ip to int
+    mylogs=getlog()
     iplong=[]
+    mylogs.info("range: change ip to long.")
     for irange in rangedata:
         tmplist=[]
         tmp=rangedata.split('-')
@@ -67,10 +69,12 @@ def range_data_match(rangedata,esdata):
         tmplist.append(endip)
         iplong.append(tmplist)
     #secondly, sorted
+    mylogs.info("range: sorted the data.")
     new_range=sorted(iplong,key=lambda x:x[0])
     # finally , binary search
     remain_data=[]
     rangeLen = len(new_range)
+    mylogs.info("range: binary search.")
     for ips in esdata:
         ip_es_num = socket.ntohl(struct.unpack("I",socket.inet_aton(str(ips)))[0])
         # Binary Search
