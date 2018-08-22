@@ -122,7 +122,6 @@ def check_func(esdata,wldata,mylogs):
     return remain_data
 
 
-
 # start
 def start(sTime,deltatime):
     # new check function

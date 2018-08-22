@@ -42,5 +42,4 @@ if __name__ == '__main__':
         starttime = time.strftime("%Y-%m-%d %H:%M:%S")
     else:
         starttime = datetime.datetime.strptime(discard, '%Y-%m-%d %H:%M:%S')
-
     start(starttime,deltatime)
