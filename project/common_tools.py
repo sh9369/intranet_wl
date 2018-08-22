@@ -70,7 +70,7 @@ def range_data_match(rangedata,esdata):
         iplong.append(tmplist)
     #secondly, sorted
     mylogs.info("range: sorted the data.")
-    new_range=sorted(iplong,key=lambda x:x[0])
+    new_range=sorted(iplong,key=lambda x:x[0])# new_range:[[start1,end1],[start2,end2],...[]]
     # finally , binary search
     remain_data=[]
     rangeLen = len(new_range)
@@ -82,7 +82,7 @@ def range_data_match(rangedata,esdata):
         nhigh=rangeLen-1
         while(nlow<=nhigh):
             nmid=(nlow+nhigh)/2
-            subnet_num=new_range[nmid][1]# [start,end]
+            subnet_num=new_range[nmid]# [start,end]
             if(subnet_num[0]<=ip_es_num<=subnet_num[1]):
                 # matched
                 break
